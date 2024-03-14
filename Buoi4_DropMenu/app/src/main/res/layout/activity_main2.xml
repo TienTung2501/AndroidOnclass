@@ -12,17 +12,37 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="180dp"
         android:layout_marginTop="160dp"
-        android:text="Back"
+        android:text="Tính"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewKetQua" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewKetQua1" />
 
     <TextView
-        android:id="@+id/textViewKetQua"
+        android:id="@+id/textViewKetQua1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="212dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="116dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewKetQua3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewKetQua1" />
+
+    <TextView
+        android:id="@+id/textViewSo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="40dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewKetQua3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

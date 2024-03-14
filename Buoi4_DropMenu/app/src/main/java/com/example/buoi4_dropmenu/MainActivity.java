@@ -1,5 +1,10 @@
 package com.example.buoi4_dropmenu;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -28,8 +33,26 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> arrayListMonhoc;
     ArrayAdapter<String> adapterListView;
     ArrayAdapter<String> adapterSpinner;
-    TextInputEditText nhapMonHoc,editTextHoTen;
-    Button them,save,login,send;
+    TextInputEditText nhapMonHoc,editTextHoTen,inputSoA,inputSoB,inputSoC;
+    TextView ketqua;
+    Button them,save,login,send,gui;
+    // cách lấy dữ liệu 2
+    private ActivityResultLauncher<Intent> activityResultLauncher=
+            registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if(result.getResultCode()==33){
+                        Intent intent=result.getData();
+                        int t=intent.getIntExtra("tong",-1);
+                        String conghiem=intent.getStringExtra("conghiem");
+                        if(conghiem=="Co nghiem"&&t!=-1){
+                            ketqua.setText(String.valueOf(t));
+                        }
+                        else
+                            ketqua.setText(conghiem.toString());
+                    }
+                }
+            });
 
     int index;
     double tien = 0;
@@ -46,6 +69,12 @@ public class MainActivity extends AppCompatActivity {
         login= (Button) findViewById(R.id.Login);
         send =(Button) findViewById(R.id.btnSend) ;
         editTextHoTen= findViewById(R.id.sendata);
+        inputSoA=findViewById(R.id.textInputEditTextSoA);
+        inputSoB=findViewById(R.id.edittextSoB);
+        inputSoC=findViewById(R.id.edittextSo3);
+        gui=findViewById(R.id.buttonGui);
+        ketqua=findViewById(R.id.textViewKetQua2);
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +91,12 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("myBundle",bundle);
                 intent.putExtra("Ho ten",ht);
                 startActivity(intent);
+            }
+        });
+        gui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                xuly();
             }
         });
         // Initialize the ArrayList
@@ -153,6 +188,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void xuly() {
+        Intent intent =new Intent(MainActivity.this,MainActivity2.class);
+        int a=Integer.parseInt(inputSoA.getText().toString());
+        int b=Integer.parseInt(inputSoB.getText().toString());
+        int c=Integer.parseInt(inputSoC.getText().toString());
+        intent.putExtra("a",a);
+        intent.putExtra("b",b);
+        intent.putExtra("c",c);
+        activityResultLauncher.launch(intent);
+        //startActivityForResult(intent,99); cách lấy dữ liệu 1
+    }
+
+//    @Override// cách lấy dữ liệu 1
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode==99 && resultCode==33){
+//            int t=data.getIntExtra("tong",1);
+//            ketqua.setText(String.valueOf(t));
+//        }
+//    }
+
     private void xacNhanXoa(final int position){
         AlertDialog.Builder aler= new AlertDialog.Builder(this);
         aler.setTitle("Thong bao");

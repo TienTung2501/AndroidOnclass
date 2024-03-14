@@ -17,10 +17,10 @@
 
     <Spinner
         android:id="@+id/spinnerMonHoc"
-        android:layout_width="252dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="284dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ListViewMonHoc" />
 
@@ -28,16 +28,16 @@
         android:id="@+id/textViewThanhTien"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="336dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="4dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputEditText"
-        android:layout_width="298dp"
-        android:layout_height="75dp"
+        android:layout_width="307dp"
+        android:layout_height="64dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:hint="hint"
@@ -48,8 +48,8 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="20dp"
         android:text="Them"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewThanhTien" />
@@ -58,8 +58,8 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="44dp"
         android:text="Save"
         app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
@@ -68,8 +68,8 @@
         android:id="@+id/Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="20dp"
         android:text="Login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
@@ -78,8 +78,8 @@
         android:id="@+id/btnSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
         android:text="Send Data"
         app:layout_constraintStart_toEndOf="@+id/Login"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
@@ -88,10 +88,60 @@
         android:id="@+id/sendata"
         android:layout_width="217dp"
         android:layout_height="56dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
         android:hint="hint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditTextSoA"
+        android:layout_width="232dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:hint="hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sendata" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edittextSoB"
+        android:layout_width="214dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:hint="hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputEditTextSoA" />
+
+    <Button
+        android:id="@+id/buttonGui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="24dp"
+        android:text="Gui"
+        app:layout_constraintStart_toEndOf="@+id/sendata"
+        app:layout_constraintTop_toBottomOf="@+id/btnSend" />
+
+    <TextView
+        android:id="@+id/textViewKetQua2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="44dp"
+        android:text="Ketqua"
+        app:layout_constraintStart_toEndOf="@+id/textInputEditTextSoA"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGui" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edittextSo3"
+        android:layout_width="233dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:hint="hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittextSoB" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
